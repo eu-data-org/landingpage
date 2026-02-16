@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU-Data.org — European Digital Sovereignty</title>
+    <meta name="description" content="Defending Europe's digital sovereignty. Building GDPR-compliant alternatives to foreign tech giants.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --eu-blue: #003399;
+            --eu-yellow: #FFCC00;
+            --text-dark: #1a1a2e;
+            --text-muted: #4a5568;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --accent-red: #dc2626;
+            --accent-green: #059669;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--eu-blue);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--eu-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .header-badge {
+            background: var(--eu-yellow);
+            color: var(--text-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--eu-blue) 0%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--eu-yellow);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--eu-yellow);
+            color: var(--text-dark);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--eu-yellow);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Mission Grid */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .mission-card {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .mission-icon {
+            width: 48px;
+            height: 48px;
+            background: #e0e7ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--eu-blue);
+        }
+
+        .mission-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+
+        .mission-card p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        /* Services */
+        .services {
+            background: var(--bg-white);
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--eu-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .service-content h3 {
+            font-size: 1.125rem;
+            margin-bottom: 4px;
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .service-badge {
+            background: var(--eu-yellow);
+            color: var(--text-dark);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .service-status {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .status-planned {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-active {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* Alert Section */
+        .alert-section {
+            background: #fef2f2;
+        }
+
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .alert-card {
+            background: var(--bg-white);
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .alert-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+            color: var(--accent-red);
+        }
+
+        .alert-card p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 16px;
+        }
+
+        .alert-card a {
+            color: var(--eu-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .alert-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Initiative */
+        .initiative {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+        }
+
+        .initiative .section-header h2 {
+            color: white;
+        }
+
+        .initiative .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .initiative-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .initiative-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .initiative-text p {
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .initiative-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .initiative-links a {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+
+        .initiative-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .founder-card {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .founder-card h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: var(--eu-yellow);
+        }
+
+        .founder-card p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .founder-card a {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 48px 0 24px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+        }
+
+        .footer-links h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            color: var(--eu-yellow);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .alert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .initiative-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .service-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.436-.18-.853-.5-1.158a1.055 1.055 0 01-.5-1.158l.47-1.881a2.11 2.11 0 01.874-1.262l1.521-1.043a2.11 2.11 0 011.595-.226l.587.175" />
+                    </svg>
+                </div>
+                EU-Data.org
+            </a>
+            <span class="header-badge">Early Stage</span>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>European <span>Digital Sovereignty</span></h1>
+            <p class="hero-subtitle">Defending Europe's data independence. Building GDPR-compliant alternatives to foreign tech giants. No backdoors. No foreign access.</p>
+            <a href="#mission" class="hero-cta">
+                Learn Our Mission
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                </svg>
+            </a>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">27</div>
+                    <div class="stat-label">EU Member States at Risk</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500M+</div>
+                    <div class="stat-label">Citizens' Data Exposed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">Cloud Infrastructure Foreign-Owned</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section id="mission">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Mission</h2>
+                <p>Three pillars to reclaim Europe's digital independence</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3>Watch & Expose</h3>
+                    <p>Monitor contracts between EU institutions and non-European data companies. Transparency through freedom of information requests and public reporting.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <h3>Build Alternatives</h3>
+                    <p>Develop and promote European-owned, GDPR-compliant digital services. Email, cloud, search — infrastructure that respects European law and values.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+                    </div>
+                    <h3>Educate & Advocate</h3>
+                    <p>Raise public awareness about data sovereignty risks. Empower citizens and organizations to make informed choices about their digital infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>European Alternatives</h2>
+                <p>GDPR-compliant services built in Europe, hosted in Europe, governed by European law</p>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>mail-free.eu <span class="service-badge">Planned</span></h3>
+                    <p>Free, privacy-first email service. No tracking, no ads, full encryption. European servers, European jurisdiction.</p>
+                </div>
+                <span class="service-status status-planned">Coming Soon</span>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>EU Cloud Storage <span class="service-badge">Planned</span></h3>
+                    <p>Secure cloud storage with zero-knowledge encryption. Your data never leaves European jurisdiction.</p>
+                </div>
+                <span class="service-status status-planned">Planned</span>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Data Sovereignty Directory <span class="service-badge">Active</span></h3>
+                    <p>Curated list of European-owned digital services. Find alternatives you can trust.</p>
+                </div>
+                <span class="service-status status-active">In Development</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert Section -->
+    <section class="alert-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why This Matters</h2>
+                <p>Real threats to European data sovereignty you should know about</p>
+            </div>
+            <div class="alert-grid">
+                <div class="alert-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                        US CLOUD Act
+                    </h3>
+                    <p>The Clarifying Lawful Overseas Use of Data Act allows US law enforcement to access data stored by US companies <strong>anywhere in the world</strong> — including European servers. GDPR protections mean nothing when your cloud provider is American.</p>
+                    <a href="https://en.wikipedia.org/wiki/CLOUD_Act" target="_blank" rel="noopener">Learn more →</a>
+                </div>
+                <div class="alert-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                        Palantir in Europe
+                    </h3>
+                    <p>Palantir Technologies, a US defense contractor, provides data analytics to European police forces and intelligence agencies. Sensitive citizen data processed by systems subject to US government access — a fundamental sovereignty breach.</p>
+                    <a href="https://en.wikipedia.org/wiki/Palantir_Technologies" target="_blank" rel="noopener">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiative -->
+    <section class="initiative">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Initiative Behind EU-Data</h2>
+                <p>Built by Europeans, for Europe</p>
+            </div>
+            <div class="initiative-content">
+                <div class="initiative-text">
+                    <h3>Developer-First Philosophy</h3>
+                    <p>EU-Data.org is initiated by <a href="https://europehost.eu" target="_blank" style="color: var(--eu-yellow);">EuropeHost.eu</a>, part of <a href="https://xpsystems.eu" target="_blank" style="color: var(--eu-yellow);">XPSystems.eu</a> — a German technology company building the digital infrastructure Europe needs.</p>
+                    <p>The same team founded <a href="https://mtex.dev" target="_blank" style="color: var(--eu-yellow);">MTEX.dev</a>, a developer-first platform creating tools they actually wanted to use. Now they're applying that same philosophy to digital sovereignty.</p>
+                    <div class="initiative-links">
+                        <a href="https://europehost.eu" target="_blank">EuropeHost.eu</a>
+                        <a href="https://xpsystems.eu" target="_blank">XPSystems.eu</a>
+                        <a href="https://xpsystems.de" target="_blank">XPSystems.de</a>
+                        <a href="https://mtex.dev" target="_blank">MTEX.dev</a>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <h4>Based in Germany 🇩🇪</h4>
+                    <p>Subject to GDPR. Subject to German data protection law. No foreign jurisdiction can override European privacy rights on our infrastructure.</p>
+                    <p style="margin-top: 16px; font-size: 0.8125rem; opacity: 0.8;">
+                        <strong>Principle:</strong> "Building the tools we actually want to use — and the infrastructure Europe actually needs."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EU-Data.org</h3>
+                    <p>Defending European digital sovereignty through transparency, alternatives, and education. Data belongs to those who create it — not foreign governments or corporations.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Initiative</h4>
+                    <ul>
+                        <li><a href="https://europehost.eu" target="_blank">EuropeHost.eu</a></li>
+                        <li><a href="https://xpsystems.eu" target="_blank">XPSystems.eu</a></li>
+                        <li><a href="https://xpsystems.de" target="_blank">XPSystems.de</a></li>
+                        <li><a href="https://mtex.dev" target="_blank">MTEX.dev</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Planned Services</h4>
+                    <ul>
+                        <li><a href="https://mail-free.eu" target="_blank">mail-free.eu</a></li>
+                        <li>EU Cloud (TBA)</li>
+                        <li>Directory (TBA)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Founded by <a href="https://fabian.ternis.eu" target="_blank">Fabian Ternis</a> (<a href="https://fabianternis.de" target="_blank">fabianternis.de</a>) via <a href="https://europehost.eu" target="_blank">EuropeHost.eu</a> by <a href="https://xpsystems.eu" target="_blank">XPSystems.eu</a> (<a href="https://xpsystems.de" target="_blank">xpsystems.de</a>)</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
