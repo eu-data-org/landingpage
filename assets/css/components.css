@@ -1,0 +1,114 @@
+/* ============================================================
+   EU-Data.org — Components: buttons, badges, flags, theme toggle, cards
+   ============================================================ */
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 22px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer; border: none;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.btn-lg { padding: 14px 28px; font-size: 1rem; }
+.btn-primary { background: var(--eu-yellow); color: #1a1a2e; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+.btn-secondary { background: rgba(255,255,255,.12); color: white; border: 1px solid rgba(255,255,255,.35); }
+.btn-secondary:hover { background: rgba(255,255,255,.22); }
+
+/* ---------- Badges ---------- */
+.badge {
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-left: 8px; vertical-align: middle;
+}
+.badge-success { background: #d1fae5; color: #065f46; }
+.badge-warning { background: #fef3c7; color: #92400e; }
+[data-theme="dark"] .badge-success { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .badge-warning { background: #451a03; color: #fcd34d; }
+
+.status-badge { font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; font-weight: 600; white-space: nowrap; }
+.status-active   { background: #d1fae5; color: #065f46; }
+.status-planned  { background: #fef3c7; color: #92400e; }
+.status-research { background: #ede9fe; color: #5b21b6; }
+[data-theme="dark"] .status-active   { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .status-planned  { background: #451a03; color: #fcd34d; }
+[data-theme="dark"] .status-research { background: #2e1065; color: #c4b5fd; }
+
+.feature-tag {
+    background: var(--bg-page);
+    color: var(--text-muted);
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    border: 1px solid var(--border);
+    display: inline-flex; align-items: center; gap: 4px;
+}
+.feature-tag [data-icon] { display: inline-flex; align-items: center; gap: 4px; }
+.feature-tag [data-icon] svg { vertical-align: middle; flex-shrink: 0; }
+
+/* ---------- Flags ---------- */
+.flag-icon {
+    display: inline-block; width: 20px; height: 14px;
+    object-fit: cover; border-radius: 2px;
+    vertical-align: middle; margin-bottom: 1px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+}
+.flag-lg { width: 32px; height: 22px; }
+
+/* ---------- Theme switcher (3-way) ---------- */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3px;
+    gap: 2px;
+}
+
+.theme-btn {
+    width: 30px; height: 30px;
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background var(--transition), color var(--transition);
+    flex-shrink: 0;
+}
+.theme-btn:hover { color: var(--text-primary); }
+.theme-btn.active {
+    background: var(--bg-surface);
+    color: var(--eu-blue);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Footer variant */
+.footer-theme-row .theme-switcher {
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.12);
+}
+.footer-theme-row .theme-btn { color: rgba(255,255,255,.45); }
+.footer-theme-row .theme-btn:hover { color: rgba(255,255,255,.85); }
+.footer-theme-row .theme-btn.active {
+    background: rgba(255,255,255,.12);
+    color: white;
+    box-shadow: none;
+}
+
+/* ---------- Shared card hover ---------- */
+.card-base {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.card-base:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+/* ---------- Fade-in ---------- */
+.fade-in { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }

@@ -1,0 +1,50 @@
+/* ============================================================
+   EU-Data.org — Responsive breakpoints
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 900px) {
+    .apps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    header { position: sticky; }
+    .nav {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-surface); border-bottom: 1px solid var(--border);
+        padding: 12px 20px; box-shadow: var(--shadow-md);
+    }
+    .nav.open { display: block; }
+    .nav-list { flex-direction: column; gap: 2px; }
+    .nav-list a { padding: 9px 12px; font-size: 0.9375rem; }
+    .menu-toggle { display: flex; }
+    .hero h1 { font-size: 2rem; }
+    .stats { grid-template-columns: 1fr; gap: 16px; }
+    .mission-grid { grid-template-columns: 1fr; }
+    .threats-grid { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .initiative-content { grid-template-columns: 1fr; }
+    .newsletter-container { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .service-item { flex-direction: column; text-align: center; }
+    .service-status { margin-left: 0; }
+    .alternatives-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-group { flex-direction: column; }
+    .initiative-stats { flex-wrap: wrap; }
+    /* Compact theme switcher label on mobile */
+    .footer-theme-row > span { display: none; }
+}
+
+@media (max-width: 600px) {
+    .apps-grid { grid-template-columns: 1fr; }
+    .app-card { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .alternatives-grid { grid-template-columns: 1fr; }
+    .hero-cta-group { flex-direction: column; align-items: center; }
+}

@@ -1,0 +1,74 @@
+/* ============================================================
+   EU-Data.org — Base: reset, tokens, typography
+   ============================================================ */
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ---------- Design tokens (light) ---------- */
+:root {
+    --eu-blue:        #003399;
+    --eu-blue-light:  #1a4db3;
+    --eu-yellow:      #FFCC00;
+    --accent-red:     #dc2626;
+    --accent-green:   #059669;
+
+    --text-primary:   #0f172a;
+    --text-secondary: #475569;
+    --text-muted:     #64748b;
+
+    --bg-page:        #f1f5f9;
+    --bg-surface:     #ffffff;
+    --bg-subtle:      #f8fafc;
+
+    --border:         #e2e8f0;
+    --border-strong:  #cbd5e1;
+
+    /* Light mode: subtle dark shadows */
+    --shadow-sm:  0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+    --shadow-md:  0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
+    --shadow-lg:  0 12px 28px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.06);
+
+    --radius-sm:  6px;
+    --radius-md:  10px;
+    --radius-lg:  14px;
+    --radius-xl:  20px;
+
+    --transition: 0.2s ease;
+}
+
+/* ---------- Dark mode tokens ---------- */
+[data-theme="dark"] {
+    --eu-blue:        #4d7fff;
+    --eu-blue-light:  #6b93ff;
+    --eu-yellow:      #FFCC00;
+
+    --text-primary:   #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted:     #64748b;
+
+    --bg-page:        #0b0f1a;
+    --bg-surface:     #131929;
+    --bg-subtle:      #1a2236;
+
+    --border:         #1e2d47;
+    --border-strong:  #2a3f5f;
+
+    /* Dark mode: light blue glow instead of dark shadows */
+    --shadow-sm:  0 1px 4px rgba(77,127,255,.10), 0 0 0 1px rgba(77,127,255,.06);
+    --shadow-md:  0 4px 16px rgba(77,127,255,.14), 0 2px 6px rgba(77,127,255,.08);
+    --shadow-lg:  0 12px 32px rgba(77,127,255,.18), 0 4px 12px rgba(77,127,255,.10);
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.65;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    transition: background var(--transition), color var(--transition);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
