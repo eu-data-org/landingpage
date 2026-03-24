@@ -29,22 +29,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.stat-number[data-value]').forEach(el => statObserver.observe(el));
 
-    // ---------- Fade-in on scroll ----------
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                fadeObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.08 });
+    // ---------- Fade-in on scroll (starts after a short page-load delay) ----------
+    setTimeout(function () {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Extra per-element delay so cards stagger nicely
+                    const delay = parseInt(entry.target.dataset.fadeDelay || 0, 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
 
-    document.querySelectorAll(
-        '.mission-card, .threat-card, .case-card, .service-item, .timeline-item, .app-card'
-    ).forEach((el, i) => {
-        el.classList.add('fade-in');
-        el.style.transitionDelay = `${(i % 4) * 60}ms`;
-        fadeObserver.observe(el);
-    });
+        document.querySelectorAll(
+            '.mission-card, .threat-card, .case-card, .service-item, .timeline-item, .app-card'
+        ).forEach((el, i) => {
+            el.classList.add('fade-in');
+            el.dataset.fadeDelay = (i % 4) * 100; // 0 / 100 / 200 / 300 ms stagger
+            fadeObserver.observe(el);
+        });
+    }, 300); // wait 300 ms after DOMContentLoaded before attaching observers
 
 });
