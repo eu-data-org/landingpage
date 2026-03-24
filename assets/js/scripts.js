@@ -9,21 +9,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
+}
+
+// Service tabs
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        const content = document.getElementById(tab);
+        if (content) content.classList.add('active');
+    });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    });
+});
+
+// Newsletter form
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = newsletterForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Subscribed!';
+        btn.disabled = true;
+    });
+}
+
 // Animate stat numbers on scroll
 function animateCounter(el, target, suffix = '') {
     const duration = 1500;
     const start = performance.now();
-    const isDecimal = target % 1 !== 0;
-
     function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
+        const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        const value = eased * target;
-        el.textContent = (isDecimal ? value.toFixed(0) : Math.floor(value)) + suffix;
+        el.textContent = Math.floor(eased * target) + suffix;
         if (progress < 1) requestAnimationFrame(update);
     }
-
     requestAnimationFrame(update);
 }
 
@@ -31,9 +66,7 @@ const statObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const el = entry.target;
-            const raw = el.dataset.value;
-            const suffix = el.dataset.suffix || '';
-            animateCounter(el, parseFloat(raw), suffix);
+            animateCounter(el, parseFloat(el.dataset.value), el.dataset.suffix || '');
             statObserver.unobserve(el);
         }
     });
@@ -41,7 +74,7 @@ const statObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.stat-number[data-value]').forEach(el => statObserver.observe(el));
 
-// Fade-in on scroll for cards
+// Fade-in on scroll
 const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -51,7 +84,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.mission-card, .alert-card, .service-item').forEach(el => {
+document.querySelectorAll('.mission-card, .threat-card, .case-card, .service-item, .timeline-item').forEach(el => {
     el.classList.add('fade-in');
     fadeObserver.observe(el);
 });
