@@ -110,5 +110,11 @@
 .card-base:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
 /* ---------- Fade-in ---------- */
-.fade-in { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.fade-in {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
 .fade-in.visible { opacity: 1; transform: translateY(0); }

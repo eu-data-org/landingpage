@@ -29,28 +29,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.stat-number[data-value]').forEach(el => statObserver.observe(el));
 
-    // ---------- Fade-in on scroll (starts after a short page-load delay) ----------
+    // ---------- Fade-in on scroll ----------
+    // Broad selector — catches every card/item type on the page
+    const FADE_SELECTOR = [
+        '.mission-card',
+        '.threat-card',
+        '.case-card',
+        '.service-item',
+        '.timeline-item',
+        '.app-card',
+        '.faq-item',
+        '.alternative-card',
+        '.contact-method',
+        '.newsletter-form',
+        '.contact-info',
+        '.founder-card',
+        '.initiative-text',
+    ].join(', ');
+
+    // Assign each element a stagger delay based on its visual group (siblings share a group)
+    function assignDelays(elements) {
+        // Group by parent so siblings stagger together, unrelated sections start fresh
+        const parentMap = new Map();
+        elements.forEach(el => {
+            const key = el.parentElement;
+            if (!parentMap.has(key)) parentMap.set(key, []);
+            parentMap.get(key).push(el);
+        });
+        parentMap.forEach(group => {
+            group.forEach((el, i) => {
+                el.dataset.fadeDelay = i * 75; // 75 ms between siblings
+            });
+        });
+    }
+
     setTimeout(function () {
+        const targets = Array.from(document.querySelectorAll(FADE_SELECTOR));
+
+        assignDelays(targets);
+
+        targets.forEach(el => el.classList.add('fade-in'));
+
         const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Extra per-element delay so cards stagger nicely
-                    const delay = parseInt(entry.target.dataset.fadeDelay || 0, 10);
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, delay);
-                    fadeObserver.unobserve(entry.target);
-                }
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const delay = parseInt(el.dataset.fadeDelay || 0, 10);
+                setTimeout(() => el.classList.add('visible'), delay);
+                fadeObserver.unobserve(el);
             });
-        }, { threshold: 0.08 });
-
-        document.querySelectorAll(
-            '.mission-card, .threat-card, .case-card, .service-item, .timeline-item, .app-card'
-        ).forEach((el, i) => {
-            el.classList.add('fade-in');
-            el.dataset.fadeDelay = (i % 4) * 100; // 0 / 100 / 200 / 300 ms stagger
-            fadeObserver.observe(el);
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -20px 0px',
         });
-    }, 300); // wait 300 ms after DOMContentLoaded before attaching observers
+
+        targets.forEach(el => fadeObserver.observe(el));
+
+    }, 400);
 
 });
