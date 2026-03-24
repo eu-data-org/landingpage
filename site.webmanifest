@@ -1,0 +1,13 @@
+{
+  "name": "EU-Data.org",
+  "short_name": "EU-Data",
+  "description": "Defending Europe's digital sovereignty. Building GDPR-compliant alternatives to foreign tech giants.",
+  "icons": [
+    { "src": "/assets/img/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#003399",
+  "background_color": "#003399",
+  "display": "standalone",
+  "start_url": "/"
+}
