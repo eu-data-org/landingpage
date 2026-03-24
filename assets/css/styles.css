@@ -790,3 +790,18 @@ footer {
 @media (max-width: 480px) {
     .alternatives-grid { grid-template-columns: 1fr; }
 }
+
+/* Flag images */
+.flag-icon {
+    display: inline-block;
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+}
+.flag-lg {
+    width: 32px;
+    height: 22px;
+}
