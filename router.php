@@ -3,17 +3,17 @@
  * PHP built-in server router.
  * Usage: php -S localhost:8000 router.php
  *
- * Serves real files (assets, webmanifest, etc.) directly.
- * Everything else goes through public/index.php.
+ * Webroot is public/ — assets, webmanifest, favicons all live there.
+ * PHP files (bootstrap, components) stay outside public/ for security.
  */
 
-$uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$uri  = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$file = __DIR__ . '/public' . $uri;
 
-// Serve existing files from project root (assets/, site.webmanifest, etc.)
-$file = __DIR__ . $uri;
+// Serve existing static files from public/ directly
 if ($uri !== '/' && file_exists($file) && !is_dir($file)) {
-    return false; // let PHP serve it natively
+    return false; // PHP built-in server serves it natively
 }
 
-// Route everything else through the front controller
+// Everything else → front controller
 require __DIR__ . '/public/index.php';
