@@ -191,10 +191,97 @@
     min-width: 20px;
 }
 
-/* Mobile: panel goes full-width */
-@media (max-width: 480px) {
-    .a11y-panel {
-        width: calc(100vw - 48px);
-        right: -12px;
-    }
+/* ---------- Floating Accessibility Tab (desktop) ---------- */
+.a11y-float {
+    display: none; /* shown via media query below */
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 900;
 }
+
+.a11y-float-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px 12px 12px;
+    background: var(--eu-blue);
+    color: white;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    /* start tucked: only the icon (18px) + padding (12+14=26px) = 44px wide visible,
+       label is hidden via overflow */
+    overflow: hidden;
+    max-width: 44px;
+    transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+    white-space: nowrap;
+    box-shadow: -2px 0 12px rgba(0, 51, 153, 0.25);
+}
+
+.a11y-float-tab:hover,
+.a11y-float-tab:focus-visible,
+.a11y-float-tab.open {
+    max-width: 180px;
+    background: var(--eu-blue-light);
+    box-shadow: -4px 0 20px rgba(0, 51, 153, 0.35);
+    outline: none;
+}
+
+.a11y-float-tab svg { flex-shrink: 0; }
+
+.a11y-float-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transition: opacity 0.15s ease 0.1s;
+    pointer-events: none;
+}
+
+.a11y-float-tab:hover .a11y-float-label,
+.a11y-float-tab:focus-visible .a11y-float-label,
+.a11y-float-tab.open .a11y-float-label {
+    opacity: 1;
+}
+
+/* Panel anchored to the float tab */
+.a11y-float-panel {
+    position: fixed;
+    right: 44px;   /* flush with the tab */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 899;
+    overflow: hidden;
+    /* slide-in from right */
+    opacity: 0;
+    pointer-events: none;
+    translate: 20px 0;
+    transition: opacity 0.25s ease, translate 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.a11y-float-panel.visible {
+    opacity: 1;
+    pointer-events: auto;
+    translate: 0 0;
+}
+
+@media (min-width: 769px) {
+    .a11y-float { display: block; }
+    /* hide the header button on desktop since float tab replaces it */
+    .a11y-btn { display: none; }
+}
+
+@media (max-width: 768px) {
+    .a11y-float { display: none; }
+    .a11y-btn   { display: flex; }
+}
+
