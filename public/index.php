@@ -22,6 +22,8 @@ require_once dirname(__DIR__) . '/bootstrap.php';
 
 <?php require COMPONENTS . '/footer.php'; ?>
 
+<?php require COMPONENTS . '/cookie-banner.php'; ?>
+
 <script src="/assets/js/svgs.js"></script>
 <script src="/assets/js/theme.js"></script>
 <script src="/assets/js/ui.js"></script>

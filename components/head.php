@@ -5,6 +5,7 @@
     <meta name="description" content="<?= htmlspecialchars($config['description']) ?>">
 
     <!-- Favicons & Manifest -->
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">

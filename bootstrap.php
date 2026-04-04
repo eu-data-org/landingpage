@@ -21,8 +21,10 @@ $uri = urldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
 $uri = rtrim($uri, '/') ?: '/';
 
 $routes = [
-    '/'        => null,           // handled by public/index.php directly
+    '/'        => null,
     '/imprint' => PAGES . '/imprint.php',
+    '/privacy' => PAGES . '/privacy.php',
+    '/terms'   => PAGES . '/terms.php',
 ];
 
 /**
@@ -40,6 +42,7 @@ function render_page(string $component, array $config, int $status = 200): void
 <?php require COMPONENTS . '/header.php'; ?>
 <?php require $component; ?>
 <?php require COMPONENTS . '/footer.php'; ?>
+<?php require COMPONENTS . '/cookie-banner.php'; ?>
 <script src="/assets/js/svgs.js"></script>
 <script src="/assets/js/theme.js"></script>
 <script src="/assets/js/ui.js"></script>

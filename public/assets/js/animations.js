@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
         '.contact-info',
         '.founder-card',
         '.initiative-text',
+        '.recipe-card',
+        '.diday-next',
+        '.diday-logo-box',
     ].join(', ');
 
     // Assign each element a stagger delay based on its visual group (siblings share a group)

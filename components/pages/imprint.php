@@ -10,24 +10,27 @@
             <div class="imprint-block">
                 <h3>Responsible for Content</h3>
                 <p>
-                    XPSystems UG (haftungsbeschränkt)<br>
-                    c/o Fabian Ternis<br>
+                    Fabian Ternis<br>
                     Germany
                 </p>
                 <p>
-                    Website: <a href="https://xpsystems.eu/" target="_blank" rel="noopener noreferrer">xpsystems.eu</a><br>
-                    Email: <a href="mailto:contact@eu-data.org">contact@eu-data.org</a>
+                    Email: <a href="mailto:eu-data@xpsystems.eu">eu-data@xpsystems.eu</a>
+                    &nbsp;/&nbsp; <a href="mailto:contact@eu-data.org">contact@eu-data.org</a>
                 </p>
             </div>
 
             <div class="imprint-block">
                 <h3>Initiative</h3>
                 <p>
-                    EU-Data.org is an initiative by <a href="https://europehost.eu/" target="_blank" rel="noopener noreferrer">EuropeHost.eu</a>,
-                    part of <a href="https://xpsystems.eu/" target="_blank" rel="noopener noreferrer">XPSystems.eu</a> /
-                    <a href="https://xpsystems.de/" target="_blank" rel="noopener noreferrer">XPSystems.de</a>.
+                    EU-Data.org is a project by <a href="https://fabian.ternis.eu/" target="_blank" rel="noopener noreferrer">Fabian Ternis</a>,
+                    operating under the <a href="https://xpsystems.eu/" target="_blank" rel="noopener noreferrer">XPSystems</a> umbrella —
+                    a personal tech project, not a registered company.
                 </p>
-                <p>Founded by <a href="https://fabian.ternis.eu/" target="_blank" rel="noopener noreferrer">Fabian Ternis</a>.</p>
+                <p>
+                    Hosted via <a href="https://europehost.eu/" target="_blank" rel="noopener noreferrer">EuropeHost.eu</a>.
+                    Related projects: <a href="https://xpsystems.de/" target="_blank" rel="noopener noreferrer">XPSystems.de</a>,
+                    <a href="https://mtex.dev/" target="_blank" rel="noopener noreferrer">MTEX.dev</a>.
+                </p>
             </div>
 
             <div class="imprint-block">
