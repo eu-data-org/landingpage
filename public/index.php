@@ -26,6 +26,7 @@ require_once dirname(__DIR__) . '/bootstrap.php';
 
 <script src="/assets/js/svgs.js"></script>
 <script src="/assets/js/theme.js"></script>
+<script src="/assets/js/accessibility.js"></script>
 <script src="/assets/js/ui.js"></script>
 <script src="/assets/js/animations.js"></script>
 </body>

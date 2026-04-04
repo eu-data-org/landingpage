@@ -14,6 +14,7 @@ $config = [
     'site_name'    => 'EU-Data.org',
     'site_title'   => 'EU-Data.org — European Digital Sovereignty',
     'description'  => 'Defending Europe\'s digital sovereignty. Building GDPR-compliant alternatives to foreign tech giants. No backdoors. No foreign access.',
+    'keywords'     => 'European digital sovereignty, GDPR, data privacy, EU cloud, European alternatives, digital independence, data protection, EU tech',
     'theme_color'  => '#003399',
     'base_url'     => 'https://eu-data.org',
     'og_image'     => '/assets/img/android-chrome-512x512.png',
@@ -29,22 +30,26 @@ $config = [
 $page_meta = [
     '/' => [
         'canonical' => '/',
+        'keywords'  => 'European digital sovereignty, GDPR compliance, EU data protection, digital independence, European cloud alternatives, US CLOUD Act, Palantir Europe, NSA surveillance, EU tech alternatives',
     ],
     '/imprint' => [
         'site_title'  => 'Imprint — EU-Data.org',
         'description' => 'Legal information and contact details for EU-Data.org, a digital sovereignty project by Fabian Ternis.',
+        'keywords'    => 'imprint, legal notice, EU-Data.org, Fabian Ternis, XPSystems',
         'robots'      => 'noindex, follow',
         'canonical'   => '/imprint',
     ],
     '/privacy' => [
         'site_title'  => 'Privacy Policy — EU-Data.org',
         'description' => 'EU-Data.org privacy policy. We use no cookies, no trackers, and share no data with third parties.',
+        'keywords'    => 'privacy policy, no cookies, no tracking, GDPR, data protection, EU-Data.org',
         'robots'      => 'noindex, follow',
         'canonical'   => '/privacy',
     ],
     '/terms' => [
         'site_title'  => 'Terms of Service — EU-Data.org',
         'description' => 'Terms of service for EU-Data.org.',
+        'keywords'    => 'terms of service, terms and conditions, EU-Data.org',
         'robots'      => 'noindex, follow',
         'canonical'   => '/terms',
     ],
@@ -85,6 +90,7 @@ function render_page(string $component, array $config, int $status = 200): void
 <?php require COMPONENTS . '/cookie-banner.php'; ?>
 <script src="/assets/js/svgs.js"></script>
 <script src="/assets/js/theme.js"></script>
+<script src="/assets/js/accessibility.js"></script>
 <script src="/assets/js/ui.js"></script>
 <script src="/assets/js/animations.js"></script>
 </body>

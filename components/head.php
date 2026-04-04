@@ -8,6 +8,19 @@
     <meta name="robots" content="<?= htmlspecialchars($config['robots']) ?>">
     <meta name="author" content="Fabian Ternis / EU-Data.org">
     <meta name="generator" content="PHP">
+<?php if (!empty($config['keywords'])): ?>
+    <meta name="keywords" content="<?= htmlspecialchars($config['keywords']) ?>">
+<?php endif; ?>
+
+    <!-- Accessibility: apply contrast/motion tokens before first paint -->
+    <script>
+    (function(){
+        var c=localStorage.getItem('eu-contrast')||'normal';
+        var m=localStorage.getItem('eu-motion')||(window.matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full');
+        document.documentElement.setAttribute('data-contrast',c);
+        document.documentElement.setAttribute('data-motion',m);
+    })();
+    </script>
 
     <!-- Canonical -->
 <?php if (!empty($config['canonical'])): ?>
@@ -46,4 +59,5 @@
     <link rel="stylesheet" href="/assets/css/components.css">
     <link rel="stylesheet" href="/assets/css/sections.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
 </head>
