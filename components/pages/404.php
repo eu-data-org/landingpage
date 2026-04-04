@@ -1,0 +1,11 @@
+<!-- 404 Not Found -->
+<section class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1>Page Not Found</h1>
+            <p>The page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</section>

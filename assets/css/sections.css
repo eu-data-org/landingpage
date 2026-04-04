@@ -423,3 +423,53 @@
 }
 .recipe-more .recipe-title { color: var(--eu-blue); }
 .recipe-more .recipe-time  { color: var(--eu-blue); opacity: .7; }
+
+/* ---------- 404 / Error ---------- */
+.error-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+.error-content {
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+.error-code {
+    font-size: 7rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--eu-blue);
+    opacity: .15;
+    margin-bottom: 8px;
+}
+.error-content h1 { font-size: 1.75rem; margin-bottom: 12px; }
+.error-content p  { color: var(--text-muted); margin-bottom: 28px; }
+
+/* ---------- Imprint ---------- */
+.imprint-content {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.imprint-block {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+}
+.imprint-block h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--eu-blue);
+}
+.imprint-block p {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+.imprint-block p:last-child { margin-bottom: 0; }
+.imprint-block a { color: var(--eu-blue); }

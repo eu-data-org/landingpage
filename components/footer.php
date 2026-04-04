@@ -46,7 +46,7 @@
                 <span>Theme</span>
                 <div data-theme-switcher></div>
             </div>
-            <p class="footer-legal">© 2025 EU-Data.org. All rights reserved. | <a href="https://eu-data.org/privacy">Privacy Policy</a> | <a href="https://eu-data.org/terms">Terms of Service</a></p>
+            <p class="footer-legal">© 2025 EU-Data.org. All rights reserved. | <a href="/imprint">Imprint</a> | <a href="https://eu-data.org/privacy">Privacy Policy</a> | <a href="https://eu-data.org/terms">Terms of Service</a></p>
         </div>
     </div>
 </footer>
