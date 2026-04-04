@@ -1,0 +1,306 @@
+/* ============================================================
+   EU-Data.org — Accessibility: high contrast + reduce motion
+   ============================================================ */
+
+/* ---------- High Contrast ---------- */
+[data-contrast="high"] {
+    --eu-blue:        #0000cc;
+    --eu-blue-light:  #0000ff;
+    --eu-yellow:      #ffdd00;
+    --accent-red:     #cc0000;
+    --accent-green:   #006600;
+
+    --text-primary:   #000000;
+    --text-secondary: #111111;
+    --text-muted:     #222222;
+
+    --bg-page:        #ffffff;
+    --bg-surface:     #ffffff;
+    --bg-subtle:      #f0f0f0;
+
+    --border:         #000000;
+    --border-strong:  #000000;
+}
+
+[data-theme="dark"][data-contrast="high"] {
+    --eu-blue:        #66aaff;
+    --eu-yellow:      #ffee00;
+    --accent-red:     #ff4444;
+    --accent-green:   #44ff88;
+
+    --text-primary:   #ffffff;
+    --text-secondary: #eeeeee;
+    --text-muted:     #cccccc;
+
+    --bg-page:        #000000;
+    --bg-surface:     #0a0a0a;
+    --bg-subtle:      #111111;
+
+    --border:         #ffffff;
+    --border-strong:  #ffffff;
+}
+
+/* Stronger focus rings in high contrast */
+[data-contrast="high"] :focus-visible {
+    outline: 3px solid var(--eu-blue) !important;
+    outline-offset: 3px !important;
+}
+
+/* ---------- Reduce Motion ---------- */
+[data-motion="reduced"] *,
+[data-motion="reduced"] *::before,
+[data-motion="reduced"] *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior:      auto !important;
+}
+
+/* Keep fade-in elements visible when motion is reduced */
+[data-motion="reduced"] .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ---------- Accessibility Button ---------- */
+.a11y-btn {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--bg-subtle);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    flex-shrink: 0;
+}
+.a11y-btn:hover,
+.a11y-btn.active {
+    background: var(--eu-blue);
+    color: white;
+    border-color: var(--eu-blue);
+}
+
+/* ---------- Accessibility Panel ---------- */
+.a11y-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 300px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 500;
+    overflow: hidden;
+}
+
+/* The header-actions needs relative positioning for the panel */
+.header-actions { position: relative; }
+
+.a11y-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.a11y-panel-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition), color var(--transition);
+}
+.a11y-panel-close:hover { background: var(--bg-subtle); color: var(--text-primary); }
+
+.a11y-panel-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 14px; }
+
+.a11y-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.a11y-row-label { flex: 1; }
+.a11y-row-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+.a11y-row-desc {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Toggle switch */
+.a11y-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+.a11y-toggle-track {
+    width: 40px;
+    height: 22px;
+    border-radius: 11px;
+    background: var(--border-strong);
+    position: relative;
+    transition: background var(--transition);
+    display: block;
+}
+.a11y-toggle-btn[aria-checked="true"] .a11y-toggle-track {
+    background: var(--eu-blue);
+}
+.a11y-toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    transition: transform var(--transition);
+    display: block;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+.a11y-toggle-btn[aria-checked="true"] .a11y-toggle-thumb {
+    transform: translateX(18px);
+}
+.a11y-toggle-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    min-width: 20px;
+}
+
+/* ---------- Floating Accessibility Tab (desktop) ---------- */
+.a11y-float {
+    display: none; /* shown via media query below */
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 900;
+}
+
+.a11y-float-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px 12px 12px;
+    background: var(--eu-blue);
+    color: white;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    /* start tucked: only the icon (18px) + padding (12+14=26px) = 44px wide visible,
+       label is hidden via overflow */
+    overflow: hidden;
+    max-width: 44px;
+    transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+    white-space: nowrap;
+    box-shadow: -2px 0 12px rgba(0, 51, 153, 0.25);
+}
+
+.a11y-float-tab:hover,
+.a11y-float-tab:focus-visible,
+.a11y-float-tab.open {
+    max-width: 180px;
+    background: var(--eu-blue-light);
+    box-shadow: -4px 0 20px rgba(0, 51, 153, 0.35);
+    outline: none;
+}
+
+.a11y-float-tab svg { flex-shrink: 0; }
+
+.a11y-float-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transition: opacity 0.15s ease 0.1s;
+    pointer-events: none;
+}
+
+.a11y-float-tab:hover .a11y-float-label,
+.a11y-float-tab:focus-visible .a11y-float-label,
+.a11y-float-tab.open .a11y-float-label {
+    opacity: 1;
+}
+
+/* Panel anchored to the float tab */
+.a11y-float-panel {
+    position: fixed;
+    right: 44px;   /* flush with the tab */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 899;
+    overflow: hidden;
+    /* slide-in from right */
+    opacity: 0;
+    pointer-events: none;
+    translate: 20px 0;
+    transition: opacity 0.25s ease, translate 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.a11y-float-panel.visible {
+    opacity: 1;
+    pointer-events: auto;
+    translate: 0 0;
+}
+
+@media (min-width: 769px) {
+    .a11y-float { display: block; }
+    /* hide the header button on desktop since float tab replaces it */
+    .a11y-btn { display: none; }
+}
+
+@media (max-width: 768px) {
+    .a11y-float { display: none; }
+    .a11y-btn   { display: flex; }
+}
+
+
+/* ---------- Footer accessibility button ---------- */
+.footer-a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: 1px solid rgba(255,255,255,.15);
+    color: rgba(255,255,255,.5);
+    font-size: 0.8125rem;
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition);
+}
+.footer-a11y-btn:hover {
+    color: white;
+    border-color: rgba(255,255,255,.4);
+}
