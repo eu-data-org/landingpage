@@ -53,6 +53,30 @@ $page_meta = [
         'robots'      => 'noindex, follow',
         'canonical'   => '/terms',
     ],
+    '/about' => [
+        'site_title'  => 'About — EU-Data.org',
+        'description' => 'About EU-Data.org — a grassroots initiative defending European digital sovereignty, built by Fabian Ternis.',
+        'keywords'    => 'about EU-Data.org, Fabian Ternis, XPSystems, European digital sovereignty project, EuropeHost',
+        'canonical'   => '/about',
+    ],
+    '/alternatives' => [
+        'site_title'  => 'European Alternatives Directory — EU-Data.org',
+        'description' => 'A curated directory of GDPR-compliant, European-owned alternatives to US tech giants — email, cloud, search, messaging, hosting and more.',
+        'keywords'    => 'European alternatives, GDPR compliant services, EU email, EU cloud storage, European search engine, EU hosting, no US CLOUD Act',
+        'canonical'   => '/alternatives',
+    ],
+    '/blog' => [
+        'site_title'  => 'Blog — EU-Data.org',
+        'description' => 'In-depth articles on European digital sovereignty, data law, GDPR, and tech alternatives.',
+        'keywords'    => 'EU data sovereignty blog, GDPR analysis, digital independence articles, European tech news',
+        'canonical'   => '/blog',
+    ],
+    '/contact' => [
+        'site_title'  => 'Contact — EU-Data.org',
+        'description' => 'Contact EU-Data.org — suggest alternatives, report sovereignty cases, or get in touch.',
+        'keywords'    => 'contact EU-Data.org, get in touch, suggest alternative, report case',
+        'canonical'   => '/contact',
+    ],
 ];
 
 // ---------- Router ----------
@@ -66,10 +90,14 @@ if (isset($page_meta[$uri])) {
 }
 
 $routes = [
-    '/'        => null,
-    '/imprint' => PAGES . '/imprint.php',
-    '/privacy' => PAGES . '/privacy.php',
-    '/terms'   => PAGES . '/terms.php',
+    '/'             => null,
+    '/imprint'      => PAGES . '/imprint.php',
+    '/privacy'      => PAGES . '/privacy.php',
+    '/terms'        => PAGES . '/terms.php',
+    '/about'        => PAGES . '/about.php',
+    '/alternatives' => PAGES . '/alternatives.php',
+    '/blog'         => PAGES . '/blog.php',
+    '/contact'      => PAGES . '/contact.php',
 ];
 
 /**

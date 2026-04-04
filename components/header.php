@@ -10,15 +10,17 @@
 
         <nav class="nav" id="nav">
             <ul class="nav-list">
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#timeline">Timeline</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#threats">Threats</a></li>
-                <li><a href="#cases">Case Studies</a></li>
-                <li><a href="#apps">Our Apps</a></li>
-                <li><a href="#diday">DI Day</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/#mission">Mission</a></li>
+                <li><a href="/#timeline">Timeline</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#threats">Threats</a></li>
+                <li><a href="/#cases">Case Studies</a></li>
+                <li><a href="/#apps">Our Apps</a></li>
+                <li><a href="/#diday">DI Day</a></li>
+                <li><a href="/#faq">FAQ</a></li>
+                <li><a href="/alternatives">Alternatives</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
 
