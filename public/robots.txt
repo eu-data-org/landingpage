@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /terms
+
+Sitemap: https://eu-data.org/sitemap.xml
