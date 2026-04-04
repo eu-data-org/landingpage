@@ -19,10 +19,22 @@
             <div class="footer-links">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="#mission">Mission</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#threats">Threats</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="/#mission">Mission</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#threats">Threats</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/alternatives">Alternatives</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/imprint">Imprint</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -45,6 +57,11 @@
             <div class="footer-theme-row">
                 <span>Theme</span>
                 <div data-theme-switcher></div>
+                <span>|</span>
+                <button class="footer-a11y-btn" id="footerA11yBtn" aria-label="Open accessibility settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="4" r="2"/><path d="M18 22V12l-4-4-4 4v10"/><path d="M10 22v-6.5a2 2 0 0 1 4 0V22"/></svg>
+                    Accessibility
+                </button>
             </div>
             <p class="footer-legal">© 2025 EU-Data.org. All rights reserved. | <a href="/imprint">Imprint</a> | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
         </div>

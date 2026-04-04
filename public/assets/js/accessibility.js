@@ -171,6 +171,26 @@
         floatWrap.appendChild(floatPanel);
         document.body.appendChild(floatWrap);
 
+        // ---- Footer button → open whichever panel is visible ----
+        const footerBtn = document.getElementById('footerA11yBtn');
+        if (footerBtn) {
+            footerBtn.addEventListener('click', () => {
+                const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+                if (isDesktop) {
+                    const open = !floatPanel.classList.contains('visible');
+                    floatPanel.classList.toggle('visible', open);
+                    floatTab.setAttribute('aria-expanded', String(open));
+                    floatTab.classList.toggle('open', open);
+                    if (open) floatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    const open = headerPanel.hidden;
+                    headerPanel.hidden = !open;
+                    headerBtn.setAttribute('aria-expanded', String(open));
+                    headerBtn.classList.toggle('active', open);
+                }
+            });
+        }
+
         // ---- Close both panels on outside click / Escape ----
         document.addEventListener('click', (e) => {
             if (!headerPanel.hidden &&

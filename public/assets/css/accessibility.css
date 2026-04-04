@@ -285,3 +285,22 @@
     .a11y-btn   { display: flex; }
 }
 
+
+/* ---------- Footer accessibility button ---------- */
+.footer-a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: 1px solid rgba(255,255,255,.15);
+    color: rgba(255,255,255,.5);
+    font-size: 0.8125rem;
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition);
+}
+.footer-a11y-btn:hover {
+    color: white;
+    border-color: rgba(255,255,255,.4);
+}
