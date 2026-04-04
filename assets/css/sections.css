@@ -280,3 +280,146 @@
     transition: border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 .contact-method:hover { border-color: var(--eu-blue); color: var(--eu-blue); box-shadow: var(--shadow-sm); }
+
+/* ---------- DI Day ---------- */
+.diday-intro {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 48px;
+}
+.diday-intro-text p {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+.diday-next {
+    background: color-mix(in srgb, var(--eu-blue) 8%, var(--bg-surface));
+    border: 1px solid color-mix(in srgb, var(--eu-blue) 20%, var(--border));
+    border-radius: var(--radius-lg);
+    padding: 18px 22px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.diday-next-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--eu-blue);
+}
+.diday-next-date {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.diday-hashtags { display: flex; gap: 6px; flex-wrap: wrap; }
+.diday-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+
+.btn-diday {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem; font-weight: 600;
+    text-decoration: none;
+    background: var(--eu-blue); color: white;
+    border: 1px solid var(--eu-blue);
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.btn-diday:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-diday-outline {
+    background: transparent;
+    color: var(--eu-blue);
+}
+.btn-diday-outline:hover { background: color-mix(in srgb, var(--eu-blue) 8%, transparent); }
+
+.diday-intro-visual { display: flex; align-items: flex-start; justify-content: center; }
+.diday-logo-box {
+    background: var(--eu-blue);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 32px 40px;
+    text-align: center;
+    min-width: 180px;
+}
+.diday-logo-text {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -.02em;
+    line-height: 1;
+}
+.diday-logo-text span { color: var(--eu-yellow); }
+.diday-logo-sub {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    opacity: .75;
+    margin-top: 8px;
+}
+
+.section-subheader {
+    margin-bottom: 24px;
+}
+.section-subheader h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.section-subheader p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.section-subheader a { color: var(--eu-blue); }
+
+.diday-recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.recipe-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--eu-blue); }
+.recipe-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+.recipe-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.recipe-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+.recipe-difficulty {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+.recipe-very-easy-badge { background: #d1fae5; color: #065f46; }
+.recipe-easy-badge      { background: #dbeafe; color: #1e40af; }
+.recipe-medium-badge    { background: #fef3c7; color: #92400e; }
+[data-theme="dark"] .recipe-very-easy-badge { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .recipe-easy-badge      { background: #1e3a5f; color: #93c5fd; }
+[data-theme="dark"] .recipe-medium-badge    { background: #451a03; color: #fcd34d; }
+
+.recipe-more {
+    border-style: dashed;
+    background: var(--bg-subtle);
+}
+.recipe-more .recipe-title { color: var(--eu-blue); }
+.recipe-more .recipe-time  { color: var(--eu-blue); opacity: .7; }
