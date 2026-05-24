@@ -53,7 +53,7 @@
             <span>Data sources: <a href="https://en.wikipedia.org/wiki/CLOUD_Act" target="_blank" rel="noopener noreferrer">Wikipedia</a>, <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">gdpr.eu</a>, <a href="https://noyb.eu/" target="_blank" rel="noopener noreferrer">noyb.eu</a></span>
         </div>
         <div class="footer-bottom">
-            <p>Founded by <a href="https://fabian.ternis.eu/" target="_blank" rel="noopener noreferrer">Fabian Ternis</a> (<a href="https://fabianternis.de/" target="_blank" rel="noopener noreferrer">fabianternis.de</a>) via <a href="https://europehost.eu/" target="_blank" rel="noopener noreferrer">EuropeHost.eu</a> by <a href="https://xpsystems.eu/" target="_blank" rel="noopener noreferrer">XPSystems.eu</a> (<a href="https://xpsystems.de/" target="_blank" rel="noopener noreferrer">xpsystems.de</a>)</p>
+            <p>All MTEX.dev, dnbx.de, ternis-edv.de, europehost.eu, xpsystems.eu/.de are Founded by <a href="https://fabianternis.de" target="_blank" rel="noopener noreferrer">Fabian Ternis</a></p>
             <div class="footer-theme-row">
                 <span>Theme</span>
                 <div data-theme-switcher></div>
