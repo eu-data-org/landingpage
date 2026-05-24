@@ -8,8 +8,8 @@
         <div class="initiative-content">
             <div class="initiative-text">
                 <h3>Developer-First Philosophy</h3>
-                <p>EU-Data.org is initiated by <a href="https://europehost.eu/" target="_blank" rel="noopener noreferrer" style="color:var(--eu-yellow)">EuropeHost.eu</a>, part of <a href="https://xpsystems.eu/" target="_blank" rel="noopener noreferrer" style="color:var(--eu-yellow)">XPSystems.eu</a> — a German technology company building the digital infrastructure Europe needs.</p>
-                <p>The same team founded <a href="https://mtex.dev/" target="_blank" rel="noopener noreferrer" style="color:var(--eu-yellow)">MTEX.dev</a>, a developer-first platform creating tools they actually wanted to use. Now they're applying that same philosophy to digital sovereignty.</p>
+                <p>eu-data.org is initiated by <a href="https://europehost.eu/" target="_blank" rel="noopener noreferrer" style="color:var(--eu-yellow)">europehost.eu</a> which is part of <a href="https://xpsystems.eu/" target="_blank" rel="noopener noreferrer" style="color:var(--eu-yellow)">xpsystems.eu</a>, founded by <a href="https://ternis-edv.de/" target="_blank" rel="noopener noreferrer" style="color:var(--eu-yellow)">ternis-edv.de</a>.</p>
+                <p>eu-data.org is a project by ternis-edv.de, mtex.dev and xpsystems.eu/.de. The domain is owned by dnbx.de</p>
                 <div class="initiative-stats">
                     <div class="stat-box"><div class="stat-value">100%</div><div class="stat-desc">European Owned</div></div>
                     <div class="stat-box"><div class="stat-value"><img src="/assets/img/flags/de.png" alt="Germany" class="flag-icon flag-lg"></div><div class="stat-desc">Based in Germany</div></div>
@@ -26,7 +26,7 @@
                 <h4>Based in Germany <img src="/assets/img/flags/de.png" alt="Germany" class="flag-icon"></h4>
                 <p>Subject to GDPR. Subject to German data protection law. No foreign jurisdiction can override European privacy rights on our infrastructure.</p>
                 <div class="founder-principle"><strong>Principle:</strong> "Building the tools we actually want to use — and the infrastructure Europe actually needs."</div>
-                <div class="founder-info"><p>Founded by <a href="https://fabian.ternis.eu/" target="_blank" rel="noopener noreferrer">Fabian Ternis</a></p></div>
+                <div class="founder-info"><p>All MTEX.dev, dnbx.de, ternis-edv.de, europehost.eu, xpsystems.eu/.de are Founded by <a href="https://fabianternis.de" target="_blank" rel="noopener noreferrer">Fabian Ternis</a></p></div>
             </div>
         </div>
     </div>

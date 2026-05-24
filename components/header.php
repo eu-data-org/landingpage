@@ -21,6 +21,7 @@
                 <li><a href="/alternatives">Alternatives</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li><a href="https://european-alternatives.eu/" target="_blank" rel="noopener noreferrer">External Site</a></li>
             </ul>
         </nav>
 
